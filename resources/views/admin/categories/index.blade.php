@@ -23,13 +23,13 @@
                                     Image
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    Description
+                                    Description 
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($categories as $category)
-                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 ">
                                     <td scope="row"
                                         class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         {{ $category->name }}
@@ -41,6 +41,18 @@
                                     <td scope="row"
                                         class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         {{ $category->description }}
+                                    </td>
+                                    <td scope="row"
+                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <a href="{{ route('admin.categories.edit'), $category->id }}"
+                                            class="px-4 py-2 bg-green-500 hover:bg-green-700 rounded-lg text-white">
+                                            Edit
+                                        </a>
+                                        <form action="{{ route('admin.categories.delete', $category->id) }}"
+                                            method="POST"
+                                            class="px-4 py-2 bg-red-500 hover:bg-red-700 rounded-lg text-white">
+                                            Delete
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
