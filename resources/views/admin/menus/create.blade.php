@@ -66,7 +66,6 @@
                                     @endforeach
                                 </select>
                             </div>
-
                         </div>
                         <div class="mt-6 p-4">
                             <button type="submit"
