@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Carbon\Carbon;
+use App\Models\Table;
+use App\Enums\TableStatus;
+use App\Models\Reservation;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ReservationStoreRequest;
-use App\Models\Reservation;
-use App\Models\Table;
-use Illuminate\Http\Request;
 
 class ReservationController extends Controller
 {
@@ -42,7 +44,7 @@ class ReservationController extends Controller
     {
       Reservation::create($request->validated());
 
-      return to_route('admin.reservations.index');
+      return to_route('admin.reservations.index')->with('success', 'Reservation created successfully');
     }
 
     /**
@@ -64,7 +66,8 @@ class ReservationController extends Controller
      */
     public function edit($id)
     {
-        //
+      // $tables = Table::where('status', TableStatus::Avalaiable)->get();
+      //   return view('admin.reservations.edit', compact('reservation', 'tables'));
     }
 
     /**
@@ -74,9 +77,22 @@ class ReservationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ReservationStoreRequest $request, Reservation $reservation)
     {
-        //
+      $table = Table::findOrFail($request->table_id);
+      if ($request->guest_number > $table->guest_number) {
+          return back()->with('warning', 'Please choose the table base on guests.');
+      }
+      $request_date = Carbon::parse($request->res_date);
+      $reservations = $table->reservations()->where('id', '!=', $reservation->id)->get();
+      foreach ($reservations as $res) {
+          if ($res->res_date->format('Y-m-d') == $request_date->format('Y-m-d')) {
+              return back()->with('warning', 'This table is reserved for this date.');
+          }
+      }
+
+      $reservation->update($request->validated());
+      return to_route('admin.reservations.index')->with('success', 'Reservation updated successfully');
     }
 
     /**
@@ -85,8 +101,10 @@ class ReservationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Reservation $reservation)
     {
-        //
+      $reservation->delete();
+
+      return to_route('admin.reservations.index')->with('danger', 'Reservation deleted successfully');
     }
 }
