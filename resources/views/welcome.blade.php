@@ -62,7 +62,7 @@
         </div>
     </section>
     <section class="py-20 bg-gray-50">
-        <div class="container items-center max-w-6xl px-4 px-10 mx-auto sm:px-20 md:px-32 lg:px-16">
+        <div class="container items-center max-w-6xl px-4 mx-auto sm:px-20 md:px-32 lg:px-16">
             <div class="flex flex-wrap items-center -mx-3">
                 <div class="order-1 w-full px-3 lg:w-1/2 lg:order-0">
                     <div class="w-full lg:max-w-md">
@@ -113,6 +113,7 @@
             </div>
         </div>
     </section>
+    @if (is_array($specials))
     <section class="mt-8 bg-white">
         <div class="mt-4 text-center">
             <h3 class="text-2xl font-bold">Our Menu</h3>
@@ -121,7 +122,7 @@
         </div>
         <div class="container w-full px-5 py-6 mx-auto">
             <div class="grid lg:grid-cols-4 gap-y-6">
-                {{-- @foreach ($specials->menus as $menu)
+                @foreach ($specials->menus as $menu)
                     <div class="max-w-xs mx-4 mb-2 rounded-lg shadow-lg">
                         <img class="w-full h-48" src="{{ Storage::url($menu->image) }}" alt="Image" />
                         <div class="px-6 py-4">
@@ -133,10 +134,11 @@
                             <span class="text-xl text-green-600">${{ $menu->price }}</span>
                         </div>
                     </div>
-                @endforeach --}}
+                @endforeach
             </div>
         </div>
     </section>
+    @endif
     <section class="pt-4 pb-12 bg-gray-800">
         <div class="my-16 text-center">
             <h2 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
