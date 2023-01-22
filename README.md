@@ -1,66 +1,53 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Restaurant Reservation Application
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+I'm trying to deepen my knowledge about Laravel, especially about relationships between tables. By creating this repository, I hope to deepen my knowledge of SQL and Laravel.
 
-## About Laravel
+## Installation
+```
+- git clone https://github.com/Caknoooo/restaurant-reservation-app.git
+- cd restaurant-reservation-app
+- open your IDE or Editor Code
+- cp .env.example .env
+- open terminal again, and run:
+    1. composer install
+    2. php artisan migrate
+    3. php artisan db:seed
+    4. php artisan serve
+    5. npm run dev
+- open http://127.0.0.1:8000/ in browser 
+```
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Frontend
+Landing page
+![image](https://user-images.githubusercontent.com/92671053/213943897-e075d0fb-b801-496d-aceb-7beb6ad6aae9.png)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Category
+![image](https://user-images.githubusercontent.com/92671053/213944452-83e7caf5-b858-4d22-ac1b-9efef9ef9441.png)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Menu
+![image](https://user-images.githubusercontent.com/92671053/213944465-c6376640-0557-4a9e-bf2b-e81deaa380f5.png)
 
-## Learning Laravel
+Make Reservation
+![image](https://user-images.githubusercontent.com/92671053/213944502-ca889b33-6421-4a16-bb63-55728f86db0e.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+![image](https://user-images.githubusercontent.com/92671053/213944517-2ab97676-3662-4448-9178-b114235720bf.png)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Backend
+Categories
+![image](https://user-images.githubusercontent.com/92671053/213944747-c4c81e24-266f-4781-9e52-c9f7252b50fe.png)
 
-## Laravel Sponsors
+Menus
+![image](https://user-images.githubusercontent.com/92671053/213944770-311ab5f6-d10c-40e6-b7a4-37501d16fd58.png)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Tables
+![image](https://user-images.githubusercontent.com/92671053/213944779-d54bec13-2bb1-4cdf-9d1c-af3380a66684.png)
 
-### Premium Partners
+Reservations
+![image](https://user-images.githubusercontent.com/92671053/213944789-7c1c5f13-d481-43db-9c3f-91637f020d21.png)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Reference
+- **[Laraveller](https://www.youtube.com/@Laraveller)**
+- **[Restaurant Template](https://larainfo.com/blogs/tailfood-free-tailwind-css-restaurant-template)**
+- **[Flowbite](https://flowbite.com/)**
